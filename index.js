@@ -5,6 +5,7 @@ const app = express();
 //router
 const homeRoute = require("./routes/home.route");
 const genresRoute = require("./routes/genres.route");
+const customerRoute = require("./routes/customers.route");
 
 //middleware
 app.use(express.urlencoded({ extended: true }));
@@ -21,6 +22,7 @@ mongoose
 
 app.use("/api/genres", genresRoute);
 app.use("/", homeRoute);
+app.use("/api/customers", customerRoute);
 
 let port = process.env.PORT || 3000;
 
